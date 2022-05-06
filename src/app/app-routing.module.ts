@@ -1,3 +1,4 @@
+import { NetworkComponent } from './network/network.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { PeopleComponent } from './people/people.component';
 import { LoginComponent } from './login/login.component';
@@ -10,7 +11,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  
+
   {path:"", redirectTo:"login" ,pathMatch:"full"},
   {path:"home",component:HomeComponent},
   {path:"movies",component:MoviesComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:"register",component:RegisterComponent},
   {path:"login",component:LoginComponent},
   {path:"people",component:PeopleComponent},
+  {path:"network",component:NetworkComponent},
   {path:"**",component:NotfoundComponent},
 
 ];
