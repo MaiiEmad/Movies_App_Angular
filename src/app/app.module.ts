@@ -12,9 +12,10 @@ import { MoviesDetailsComponent } from './moviesDetails/moviesDetails.component'
 import { TvComponent } from './tv/tv.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { NetworkComponent } from './network/network.component';
+import { PeopleComponent } from './people/people.component';
 
 @NgModule({
-  declarations: [								
+  declarations: [									
     AppComponent,
       HomeComponent,
       LoginComponent,
@@ -25,7 +26,8 @@ import { NetworkComponent } from './network/network.component';
       MoviesDetailsComponent,
       TvComponent,
       NotfoundComponent,
-      NetworkComponent
+      NetworkComponent,
+      PeopleComponent
    ],
   imports: [
     BrowserModule,
