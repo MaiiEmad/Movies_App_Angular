@@ -13,9 +13,12 @@ import { TvComponent } from './tv/tv.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { NetworkComponent } from './network/network.component';
 import { PeopleComponent } from './people/people.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
-  declarations: [									
+  declarations: [
     AppComponent,
       HomeComponent,
       LoginComponent,
@@ -31,7 +34,9 @@ import { PeopleComponent } from './people/people.component';
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

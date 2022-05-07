@@ -1,3 +1,80 @@
-<p>
-  register works!
-</p>
+
+
+
+
+
+<div class="container w-50 my-5">
+
+<h2 class="my-4">Registeration Form</h2>
+<div *ngIf="flag" class=" alert alert-danger m-auto">
+  <p >This Email is Already Taken</p>
+</div>
+
+
+
+  <form [formGroup]="registerForm" (ngSubmit)="getRegisterInfo(registerForm)">
+    <div class="row">
+      <label for="inputName" class="col-sm-1-12 col-form-label"></label>
+      <div class="col-sm-1-12">
+        <input
+          [class.is-valid]="registerForm.get('first_name')?.errors == null && registerForm.get('first_name')?.touched"
+          formControlName="first_name"
+          type="text"
+          class="form-control"
+          name="inputName"
+          id="inputName"
+          placeholder="First Name..."
+        />
+          <p *ngIf="registerForm.get('first_name')?.errors != null && registerForm.get('first_name')?.touched" class="py-2 text-danger">First Name Invalid</p>
+      </div>
+    </div>
+    <div class="row">
+      <label for="inputName" class="col-sm-1-12 col-form-label"></label>
+      <div class="col-sm-1-12">
+        <input
+        [class.is-valid]="registerForm.get('last_name')?.errors == null && registerForm.get('last_name')?.touched"
+          formControlName="last_name"
+          type="text"
+          class="form-control"
+          name="inputName"
+          id="inputName"
+          placeholder="Last Name..."
+        />
+        <p *ngIf="registerForm.get('last_name')?.errors != null && registerForm.get('last_name')?.touched" class="py-2 text-danger">Last Name Invalid</p>
+      </div>
+    </div>
+    <div class="row">
+      <label for="inputName" class="col-sm-1-12 col-form-label"></label>
+      <div class="col-sm-1-12">
+        <input
+        [class.is-valid]="registerForm.get('email')?.errors == null && registerForm.get('email')?.touched"
+          formControlName="email"
+          type="text"
+          class="form-control"
+          name="inputName"
+          id="inputName"
+          placeholder=" Email..."
+        />
+        <p *ngIf="registerForm.get('email')?.errors != null && registerForm.get('email')?.touched" class="py-2 text-danger">Email Invalid</p>
+      </div>
+    </div>
+    <div class="row ">
+      <label for="inputName" class="col-sm-1-12 col-form-label"></label>
+      <div class="col-sm-1-12">
+        <input
+          formControlName="password"
+          type="text"
+          class="form-control"
+          name="inputName"
+          id="inputName"
+          placeholder="Password..."
+        />
+        <p  *ngIf="registerForm.get('password')?.errors != null && registerForm.get('password')?.touched" class="py-2 text-danger">Password Invalid</p>
+      </div>
+    </div>
+
+    <div class="my-4">
+      <button [disabled]="registerForm.invalid" type="submit" class="btn btn-dark text-white">Register</button>
+    </div>
+  </form>
+</div>
