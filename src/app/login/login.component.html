@@ -1,3 +1,55 @@
-<p>
-  login works!
-</p>
+
+
+
+
+
+<div class="container w-50 my-5">
+
+  <h2 class="my-4">Login Form</h2>
+
+
+
+    <form [formGroup]="loginForm" (ngSubmit)="getLoginInfo(loginForm)">
+
+      <div class="row">
+        <label for="inputName" class="col-sm-1-12 col-form-label"></label>
+        <div class="col-sm-1-12">
+          <input
+          [class.is-valid]="loginForm.get('email')?.errors == null && loginForm.get('email')?.touched"
+            formControlName="email"
+            type="text"
+            class="form-control"
+            name="inputName"
+            id="inputName"
+            placeholder=" Email..."
+          />
+          <p *ngIf="loginForm.get('email')?.errors != null && loginForm.get('email')?.touched" class="py-2 text-danger">Email Invalid</p>
+        </div>
+      </div>
+
+
+      <div class="row ">
+        <label for="inputName" class="col-sm-1-12 col-form-label"></label>
+        <div class="col-sm-1-12">
+          <input
+            formControlName="password"
+            type="text"
+            class="form-control"
+            name="inputName"
+            id="inputName"
+            placeholder="Password..."
+          />
+          <p  *ngIf="loginForm.get('password')?.errors != null && loginForm.get('password')?.touched" class="py-2 text-danger">Password Invalid</p>
+        </div>
+      </div>
+
+      <div  *ngIf="flag"  class="alert alert-danger">
+        {{errorMessage}}
+      </div>
+
+      <div class="my-4">
+        <button [disabled]="loginForm.invalid" type="submit" class="btn btn-dark text-white">Login</button>
+      </div>
+    </form>
+  </div>
+

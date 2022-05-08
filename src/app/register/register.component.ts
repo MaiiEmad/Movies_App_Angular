@@ -12,10 +12,6 @@ export class RegisterComponent implements OnInit {
 
   constructor(private _AuthService:AuthService ,private _Router:Router) { }
 
-  flag:boolean =false;
-
-
-
   // Here i build my form using TypeScript
   registerForm:FormGroup = new FormGroup({
     'first_name':new FormControl(null,[Validators.required ,Validators.minLength(3),Validators.maxLength(8)]),
@@ -24,6 +20,7 @@ export class RegisterComponent implements OnInit {
     'password':new FormControl(null,[Validators.pattern(/^[A-Z]/),Validators.required])
   });
 
+  flag:boolean =false;
 // when user enter submit or register .. this method will be called
   getRegisterInfo(registerForm: any){
 
