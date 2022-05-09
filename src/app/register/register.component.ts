@@ -12,14 +12,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(private _AuthService:AuthService ,private _Router:Router) { }
 
-  // Here i build my form using TypeScript
-  registerForm:FormGroup = new FormGroup({
-    'first_name':new FormControl(null,[Validators.required ,Validators.minLength(3),Validators.maxLength(8)]),
-    'last_name':new FormControl(null,[Validators.required ,Validators.minLength(3),Validators.maxLength(8)]),
-    'email':new FormControl(null,[Validators.required,Validators.email]),
-    'password':new FormControl(null,[Validators.pattern(/^[A-Z]/),Validators.required])
-  });
 
+  registerForm!:FormGroup;
   flag:boolean =false;
 // when user enter submit or register .. this method will be called
   getRegisterInfo(registerForm: any){
@@ -43,8 +37,14 @@ export class RegisterComponent implements OnInit {
 
 
   ngOnInit() {
-
     // console.log(this.registerForm);
+      // Here i build my form using TypeScript
+  this.registerForm= new FormGroup({
+    'first_name':new FormControl(null,[Validators.required ,Validators.minLength(3),Validators.maxLength(8)]),
+    'last_name':new FormControl(null,[Validators.required ,Validators.minLength(3),Validators.maxLength(8)]),
+    'email':new FormControl(null,[Validators.required,Validators.email]),
+    'password':new FormControl(null,[Validators.pattern(/^[A-Z]/),Validators.required])
+  });
   }
 
 }
