@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth.guard';
 import { NetworkComponent } from './network/network.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -7,7 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { TvComponent } from './tv/tv.component';
 import { AboutComponent } from './about/about.component';
 import { MoviesComponent } from './movies/movies.component';
-import { HomeComponent } from './../home/home.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 

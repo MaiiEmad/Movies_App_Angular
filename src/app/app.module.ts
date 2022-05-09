@@ -15,6 +15,8 @@ import { NetworkComponent } from './network/network.component';
 import { PeopleComponent } from './people/people.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -33,10 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
       PeopleComponent
    ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    BrowserModule,FormsModule,AppRoutingModule,HttpClientModule,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
